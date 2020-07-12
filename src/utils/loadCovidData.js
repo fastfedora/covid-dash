@@ -16,7 +16,7 @@ console.log("+++ got response", response.status, response.statusText);
 
 console.log("+++ got json", json != null, json.length || Object.keys(json));
 
-    return json;
+    return json.slice(0, 2);
   } catch (e) {
     console.error(e);
 
