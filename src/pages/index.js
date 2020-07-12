@@ -9,7 +9,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      data:  await loadCovidData(`/us/states.${intervention}.timeseries.json`),
+      data: await loadCovidData(`/us/states.${intervention}.timeseries.json`),
     }
   };
 }
@@ -25,7 +25,7 @@ export default function Home({ data }) {
       <Header title="United States" />
 
       <main className={styles.main}>
-        {data && data.map(stateData => (
+        {data && data.slice(0, 2).map(stateData => (
           <div className={styles.state} key={stateData.fips}>
             <h2>{stateData.stateName}</h2>
             <RiskLevels timeseries={stateData.actualsTimeseries} />
