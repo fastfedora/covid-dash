@@ -10,8 +10,8 @@ console.log("[index]  getServerSideProps");
 
   return {
     props: {
-      data: [],
-//      data: await loadCovidData(`/us/states.${intervention}.timeseries.json`),
+      // data: [],
+      data: await loadCovidData(`/us/states.${intervention}.timeseries.json`),
     }
   };
 }
