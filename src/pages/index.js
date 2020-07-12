@@ -14,10 +14,6 @@ export async function getServerSideProps() {
 
 
 export default function Home({ data }) {
-  // const { states } = data;
-
-console.log("data", data);
-
   return (
     <div>
       <Head>
