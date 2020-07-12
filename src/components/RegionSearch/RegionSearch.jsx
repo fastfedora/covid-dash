@@ -55,7 +55,7 @@ export default function Asynchronous() {
       if (active) {
         setOptions(regions.map(region => ({
           name: `${region.name}, ${region.state}`,
-          value: `/${region.state}/${encodeURIComponent(region.name)}`,
+          value: `/${region.state}/${encodeURIComponent(region.fips)}`,
         })));
       }
     })();
