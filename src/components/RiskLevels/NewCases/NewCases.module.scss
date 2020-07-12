@@ -1,0 +1,29 @@
+@import 'src/styles/variables';
+
+.root {
+  width: 300px;
+  text-align: center;
+  padding: $spacingUnit * 4;
+  margin: 0 auto;
+}
+
+.risk-green {
+  background: $riskGreenColor;
+}
+
+.risk-yellow {
+  background: $riskYellowColor;
+}
+
+.risk-orange {
+  background: $riskOrangeColor;
+}
+
+.risk-red {
+  background: $riskRedColor;
+}
+
+.metric {
+  font-size: 300%;
+  margin: $spacingUnit * 4;
+}

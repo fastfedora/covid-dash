@@ -1,0 +1,21 @@
+@import 'src/styles/variables';
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: initial;
+}
+
+.state {
+  text-align: center;
+  display: inline-block;
+  flex: 1 1 auto;
+  margin: $spacingUnit * 4;
+  background: #f0f0f0;
+  padding: $spacingUnit * 4 $spacingUnit * 2;
+}
+
+.state h2 {
+  margin-bottom: $spacingUnit * 4;
+  margin-top: 0;
+}
