@@ -14,7 +14,7 @@ console.log("+++ got response", response.status, response.statusText);
 
     const json = await response.json();
 
-console.log("+++ got json", json != null, Arrays.isArray(json) ? json.length : Object.keys(json));
+console.log("+++ got json", json != null, json.length || Object.keys(json));
 
     return json;
   } catch (e) {
