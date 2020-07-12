@@ -12,11 +12,7 @@ console.log("+++ got response", response.status, response.statusText);
       throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
     }
 
-    const json = await response.json();
-
-console.log("+++ got json", json != null, json.length || Object.keys(json));
-
-    return json.slice(0, 2);
+    return await response.json();
   } catch (e) {
     console.error(e);
 
