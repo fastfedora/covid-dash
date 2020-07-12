@@ -5,6 +5,7 @@ import { loadCovidData } from '../utils/loadCovidData';
 import styles from './index.module.scss';
 
 export async function getServerSideProps() {
+console.log("[index]  getServerSideProps");
   const intervention = 'NO_INTERVENTION';
 
   return {
@@ -15,6 +16,8 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ data }) {
+console.log("[index] rendering", data != null);
+
   return (
     <div>
       <Head>
