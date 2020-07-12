@@ -28,6 +28,14 @@ console.log("[index] rendering", data != null);
       <Header title="United States" />
 
       <main className={styles.main}>
+        <h2>test</h2>
+      </main>
+    </div>
+  )
+}
+
+
+/*
         {data && data.slice(0, 2).map(stateData => (
           <div className={styles.state} key={stateData.fips}>
             <h2>{stateData.stateName}</h2>
@@ -38,7 +46,5 @@ console.log("[index] rendering", data != null);
         {!data &&
           <h2>Data Could Not Be Loaded</h2>
         }
-      </main>
-    </div>
-  )
-}
+
+ */
