@@ -1,3 +1,4 @@
+import Header from '../components/Header';
 import RiskLevels from '../components/RiskLevels';
 import { analyzeTimeseries } from '../utils/analyzeTimeseries';
 import styles from './[state].module.scss';
@@ -26,10 +27,12 @@ export default function NorthCarolina({ data }) {
   const title = stateName;
 
   return (
-    <div className={styles.root}>
-      <h1>{title}</h1>
+    <>
+      <Header title={stateName} />
 
-      <RiskLevels title={stateName} timeseries={actualsTimeseries} />
-    </div>
+      <main className={styles.root}>
+        <RiskLevels title={stateName} timeseries={actualsTimeseries} />
+      </main>
+    </>
   );
 }
