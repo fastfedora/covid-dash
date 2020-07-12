@@ -1,22 +1,18 @@
 import Head from 'next/head'
 import Header from '../components/Header';
-// import RegionSearch from '../components/RegionSearch';
 import RiskLevels from '../components/RiskLevels';
-// import { analyzeTimeseries } from '../utils/analyzeTimeseries';
-// import { loadCovidData } from '../utils/loadCovidData';
+import { loadCovidData } from '../utils/loadCovidData';
 import styles from './index.module.scss';
 
 export async function getServerSideProps() {
   const intervention = 'NO_INTERVENTION';
 
-  // return await loadCovidData(`/us/states.${intervention}.timeseries.json`);
   return {
     props: {
-      data: []
+      data:  await loadCovidData(`/us/states.${intervention}.timeseries.json`),
     }
   };
 }
-
 
 export default function Home({ data }) {
   return (
@@ -29,12 +25,16 @@ export default function Home({ data }) {
       <Header title="United States" />
 
       <main className={styles.main}>
-        {data.map(stateData => (
+        {data && data.map(stateData => (
           <div className={styles.state} key={stateData.fips}>
             <h2>{stateData.stateName}</h2>
             <RiskLevels timeseries={stateData.actualsTimeseries} />
           </div>
         ))}
+
+        {!data &&
+          <h2>Data Could Not Be Loaded</h2>
+        }
       </main>
     </div>
   )
