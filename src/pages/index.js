@@ -1,15 +1,20 @@
 import Head from 'next/head'
 import Header from '../components/Header';
-import RegionSearch from '../components/RegionSearch';
+// import RegionSearch from '../components/RegionSearch';
 import RiskLevels from '../components/RiskLevels';
-import { analyzeTimeseries } from '../utils/analyzeTimeseries';
-import { loadCovidData } from '../utils/loadCovidData';
+// import { analyzeTimeseries } from '../utils/analyzeTimeseries';
+// import { loadCovidData } from '../utils/loadCovidData';
 import styles from './index.module.scss';
 
 export async function getServerSideProps() {
   const intervention = 'NO_INTERVENTION';
 
-  return await loadCovidData(`/us/states.${intervention}.timeseries.json`);
+  // return await loadCovidData(`/us/states.${intervention}.timeseries.json`);
+  return {
+    props: {
+      data: []
+    }
+  };
 }
 
 
